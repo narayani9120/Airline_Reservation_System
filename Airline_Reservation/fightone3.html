@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Availability</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, form, input, select, button {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('way.jpg'); /* Replace with your actual image path */
+      background-size: cover;
+      margin: 0;
+    }
+    header {
+      background-color:rgb(9, 9, 10);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    header img {
+      max-width: 40px;
+      height: auto;
+      float:center;
+      margin-right:10px;
+    }
+    h1{
+        display:inline-block;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label, input, select, button {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    .flight-results {
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .flight-card {
+      background-color: rgba(255, 255, 255, 0.8);;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(239, 232, 232, 0.1);
+    }
+
+    .airline {
+      display: flex; 
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .airline img {
+      max-width: 30px;
+      margin-right: 10px;
+    }
+
+    .airline span {
+      flex-grow: 1; /* Allow the airline name to take the remaining space */
+    }
+
+    .availability {
+      /* Style for availability information */
+      font-weight: bold;
+      color: green;
+    }
+
+    .facilities {
+      margin-top: 10px;
+    }
+
+    .travel-details {
+      margin-top: 10px;
+    }
+
+    .departure-details {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .departure-box {
+      flex-basis: 23%;
+      text-align: center;
+    }
+
+    .fare {
+      /* Style for fare information */
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    /* Example Box Spacing Styles */
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      margin-bottom: 20px; /* This adds space at the bottom of each box */
+    }
+
+    /* Common style for Asha Air and Vistara */
+    .flight-card.Delhi-Nepal-Express,
+    .flight-card.Ganges-Air-Connect {
+      background-color: rgba(255, 255, 255, 0.8);;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .airline.Delhi-Nepal-Express img,
+    .airline.Ganges-Air-Connect img {
+      max-width: 30px;
+      margin-right: 10px;
+    }
+
+    .airline.airline.Delhi-Nepal-Express span,
+    .airline.Ganges-Air-Connect span {
+      flex-grow: 1;
+    }
+
+    .facilities.Delhi-Nepal-Express,
+    .facilities.Ganges-Air-Connect {
+      margin-top: 10px;
+    }
+
+    .travel-details.Delhi-Nepal-Express,
+    .travel-details.Ganges-Air-Connect{
+      margin-top: 10px;
+    }
+
+    .departure-details.Delhi-Nepal-Express,
+    .departure-details.Ganges-Air-Connect {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .departure-box.Delhi-Nepal-Express,
+    .departure-box.Ganges-Air-Connect {
+      flex-basis: 23%;
+      text-align: center;
+    }
+
+    .fare.Delhi-Nepal-Express,
+    .fare.Ganges-Air-Connect {
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .book-flight-box button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png">
+    <h1>Flight Availability from Delhi to Nepal</h1>
+  </header>
+  <main>
+
+    <section class="flight-results">
+      <!-- Flight results for IndiGo -->
+      <section>
+        <div class="flight-card">
+          <h2>Flight results for Himalayan Airways</h2>
+          <!-- Show the airline logo and name -->
+          <div class="airline">
+            <img src="himalayan.jpg">
+            <span>Himalayan Airways</span>
+          </div>
+          <!-- Show only the availability -->
+          <div class="availability">
+            <span>Available</span>
+          </div>
+          <!-- Facilities information -->
+          <div class="facilities">
+            <p>Facilities: In-flight entertainment, Wi-Fi, Snacks</p>
+          </div>
+          <!-- Travel details -->
+          <div class="departure-details">
+            <div class="departure-box">
+              <label>Start Time with Place:</label>
+              <p>12:00 PM,  Delhi</p>
+            </div>
+            <div class="departure-box">
+              <label>End Time with Place:</label>
+              <p>3:00 PM, Nepal</p>
+            </div>
+            <div class="departure-box">
+              <label>Total Travel Time:</label>
+              <p>3 hours</p>
+            </div>
+            <!-- Fare information -->
+            <div class="Fare-box">
+              <label> Fare:</label>
+              <p>$200</p>
+            </div>
+            <div class="book-flight-box">
+                <button>Book Your Flight</button>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flight results for Asha Air -->
+
+      <section class="second">
+        <section class="flight-card Delhi-Nepal Express">
+          <h2>Flight results for Delhi-Nepal Express</h2>
+          <!-- Show the airline logo and name -->
+
+          <div class="airline Delhi-Nepal Express">
+            <img src="express.jpg">
+            <span>Delhi-Nepal Express</span>
+          </div>
+          <!-- Show only the availability -->
+          <div class="availability">
+            <span>Available</span>
+          </div>
+          <!-- Facilities information -->
+          <div class="facilities Delhi-Nepal Express">
+            <p>Facilities: In-flight meals, Wi-Fi</p>
+          </div>
+          <!-- Travel details -->
+          <div class="departure-details Delhi-Nepal Express">
+            <div class="departure-box">
+              <label>Start Time with Place:</label>
+              <p>1:00 PM,  Delhi</p>
+            </div>
+            <div class="departure-box">
+              <label>End Time with Place:</label>
+              <p>2:30 PM, Nepal</p>
+            </div>
+            <div class="departure-box">
+              <label>Total Travel Time:</label>
+              <p>1.5 hours</p>
+            </div>
+            <!-- Fare information -->
+            <div class="Fare-box">
+              <label> Fare:</label>
+              <p> $250</p>
+            </div>
+            <div class="book-flight-box">
+                <button>Book Your Flight</button>
+              </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Flight results for Vistara -->
+      <section class="third">
+        <section class="flight-card Ganges Air Connect">
+          <h2>Flight results for Ganges Air Connect</h2>
+          <!-- Show the airline logo and name -->
+
+          <div class="airline Ganges Air Connect">
+            <img src="ganga.jpg">
+            <span>Ganges Air Connect</span>
+          </div>
+          <!-- Show only the availability -->
+          <div class="availability">
+            <span>Available</span>
+          </div>
+          <!-- Facilities information -->
+          <div class="facilities Ganges Air Connect">
+            <p>Facilities: In-flight entertainment, Snacks</p>
+          </div>
+          <!-- Travel details -->
+          <div class="departure-details Ganges Air Connect">
+            <div class="departure-box">
+              <label>Start Time with Place:</label>
+              <p>8.00 AM, Delhi</p>
+            </div>
+            <div class="departure-box">
+              <label>End Time with Place:</label>
+              <p>10.00 AM, Nepal</p>
+            </div>
+            <div class="departure-box">
+              <label>Total Travel Time:</label>
+              <p>2 hours</p>
+            </div>
+            <!-- Fare information -->
+            <div class="Fare-box">
+              <label> Fare:</label>
+              <p>$220</p>
+            </div>
+            <div class="book-flight-box">
+                <button>Book Your Flight</button>
+              </div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>

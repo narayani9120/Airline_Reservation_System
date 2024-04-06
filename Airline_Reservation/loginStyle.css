@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('backAir.jpg') center center/cover no-repeat; 
+}
+
+
+h1 {
+    position: absolute; /* Added absolute positioning */
+    top: 0; /* Added top positioning */
+    left: 0; /* Added left positioning */
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    z-index: 10; 
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 45px;
+  }
+  h2{
+    position: absolute; /* Added absolute positioning */
+    top: 0; /* Added top positioning */
+    width: 100%;
+    text-align: center;
+    padding: 100px;
+    z-index: 100; 
+    font-size: 35px;
+
+  }
+.container {
+    background-color: grey;
+    border: 3px solid white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Set the width */
+    height: 300px; /* Set the height */
+    box-sizing: border-box;
+    margin: 50px 0 0 600px;
+    box-sizing: border-box;
+}
+
+input, label, button {
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    display: block; /* Make each element appear on a new line */
+    width: 100%; /* Take up the full width */
+}
+
+input, button {
+    width: calc(50% - 5px); /* Adjusted width with margin */
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: black;
+    color: #f7f4f4;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}

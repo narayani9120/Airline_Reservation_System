@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Availability</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, form, input, select, button {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('way.jpg'); /* Replace with your actual image path */
+      background-size: cover;
+      margin: 0;
+    }
+    header {
+      background-color:rgb(9,9,9);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    header img {
+      max-width: 40px;
+      height: auto;
+      float:center;
+      margin-right:10px;
+    }
+    h1{
+        display:inline-block;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label, input, select, button {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    .flight-results {
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .flight-card {
+      background-color: rgba(255, 255, 255, 0.8);;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(239, 232, 232, 0.1);
+    }
+
+    .airline {
+      display: flex; 
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .airline img {
+      max-width: 30px;
+      margin-right: 10px;
+    }
+
+    .airline span {
+      flex-grow: 1; /* Allow the airline name to take the remaining space */
+    }
+
+    .availability {
+      /* Style for availability information */
+      font-weight: bold;
+      color: green;
+    }
+
+    .facilities {
+      margin-top: 10px;
+    }
+
+    .travel-details {
+      margin-top: 10px;
+    }
+
+    .departure-details {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .departure-box {
+      flex-basis: 23%;
+      text-align: center;
+    }
+
+    .fare {
+      /* Style for fare information */
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      margin-bottom: 20px; /* This adds space at the bottom of each box */
+    }
+
+    
+    .flight-card.AirIndia,
+    .flight-card.DeccanWings, 
+    .flight-card.SaffronAirways{
+      background-color: rgba(255, 255, 255, 0.8);;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .airline.AirIndia img,
+    .airline.DeccanWings img,
+    .airline.SaffronAirways img{
+      max-width: 30px;
+      margin-right: 10px;
+    }
+
+    .airline.AirIndia span,
+    .airline.DeccanWings span,
+    .airline.SaffronAirways span {
+      flex-grow: 1;
+    }
+
+    .facilities.AirIndia,
+    .facilities.DeccanWings,
+    .facilities.SaffronAirways{
+      margin-top: 10px;
+    }
+
+    .travel-details.AirIndia,
+    .travel-details.DeccanWings,
+    .travel-details.SaffronAirways {
+      margin-top: 10px;
+    }
+
+    .departure-details.AirIndia,
+    .departure-details.DeccanWings,
+    .departure-details.SaffronAirways{
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .departure-box.AirIndia,
+    .departure-box.DeccanWings,
+    .departure-box.SaffronWings {
+      flex-basis: 23%;
+      text-align: center;
+    }
+
+    .fare.AirIndia,
+    .fare.DeccanWings,
+    .fare.SaffronAirways{
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+    .book-flight-box button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png">
+    <h1>Flight Availability from Hyderabad to Malaysia</h1>
+  </header>
+  <main>
+
+    <section class="flight-results">
+      <!-- Flight results for IndiGo -->
+      <section>
+        <div class="flight-card">
+          <h2>Flight results for Hyderabad Express Airlines</h2>
+          <!-- Show the airline logo and name -->
+          <div class="airline">
+            <img src="hyderabadexpress.jpg">
+            <span>Hyderabad Express Airlines</span>
+          </div>
+          <!-- Show only the availability -->
+          <div class="availability">
+            <span>Available</span>
+          </div>
+          <!-- Facilities information -->
+          <div class="facilities">
+            <p>Facilities: In-flight entertainment, Wi-Fi, Snacks</p>
+          </div>
+          <!-- Travel details -->
+          <div class="departure-details">
+            <div class="departure-box">
+              <label>Start Time with Place:</label>
+              <p>12:00 PM, Hyderabad</p>
+            </div>
+            <div class="departure-box">
+              <label>End Time with Place:</label>
+              <p>3:00 PM, Malaysia</p>
+            </div>
+            <div class="departure-box">
+              <label>Total Travel Time:</label>
+              <p>3 hours</p>
+            </div>
+            <!-- Fare information -->
+            <div class="Fare-box">
+              <label> Fare:</label>
+              <p>$200</p>
+            </div>
+            <div class="book-flight-box">
+                <button>Book Your Flight</button>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flight results for Asha Air -->
+
+      <section class="second">
+        <section class="flight-card AirIndia">
+          <h2>Flight results for AirIndia</h2>
+          <!-- Show the airline logo and name -->
+
+          <div class="airline AirIndia">
+            <img src="airindia.jpg">
+            <span>AirIndia</span>
+          </div>
+          <!-- Show only the availability -->
+          <div class="availability">
+            <span>Available</span>
+          </div>
+          <!-- Facilities information -->
+          <div class="facilities AirIndia">
+            <p>Facilities: In-flight meals, Wi-Fi</p>
+          </div>
+          <!-- Travel details -->
+          <div class="departure-details AirIndia">
+            <div class="departure-box">
+              <label>Start Time with Place:</label>
+              <p>1:00 PM, Hyderabad</p>
+            </div>
+            <div class="departure-box">
+              <label>End Time with Place:</label>
+              <p>5:00 PM, Malaysia</p>
+            </div>
+            <div class="departure-box">
+              <label>Total Travel Time:</label>
+              <p>4 hours</p>
+            </div>
+            <!-- Fare information -->
+            <div class="Fare-box">
+              <label> Fare:</label>
+              <p> $250</p>
+            </div>
+            <div class="book-flight-box">
+                <button>Book Your Flight</button>
+              </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Flight results for Vistara -->
+      <section class="third">
+        <section class="flight-card Saffron Airways">
+          <h2>Flight results for Saffron Airways</h2>
+          <!-- Show the airline logo and name -->
+
+          <div class="airline Saffron Airways">
+            <img src="saffronwings.jpg">
+            <span>Saffron Airways</span>
+          </div>
+          <!-- Show only the availability -->
+          <div class="availability">
+            <span>Available</span>
+          </div>
+          <!-- Facilities information -->
+          <div class="facilities Saffron Airways">
+            <p>Facilities: In-flight entertainment, Snacks</p>
+          </div>
+          <!-- Travel details -->
+          <div class="departure-details Saffron Airways">
+            <div class="departure-box">
+              <label>Start Time with Place:</label>
+              <p>3:30 PM, Hyderabad</p>
+            </div>
+            <div class="departure-box">
+              <label>End Time with Place:</label>
+              <p>6:00 PM, Malaysia</p>
+            </div>
+            <div class="departure-box">
+              <label>Total Travel Time:</label>
+              <p>2.5 hours</p>
+            </div>
+            <!-- Fare information -->
+            <div class="Fare-box">
+              <label> Fare:</label>
+              <p>$220</p>
+            </div>
+            <div class="book-flight-box">
+                <button>Book Your Flight</button>
+              </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="fourth">
+        <section class="flight-card Deccan Wings">
+          <h2>Flight results for Deccan Wings</h2>
+          <!-- Show the airline logo and name -->
+
+          <div class="airline Deccan Wings">
+            <img src="deccanwings.jpg">
+            <span>Deccan Wings</span>
+          </div>
+          <!-- Show only the availability -->
+          <div class="availability">
+            <span>Available</span>
+          </div>
+          <!-- Facilities information -->
+          <div class="facilities Deccan Wings">
+            <p>Facilities: In-flight entertainment, Snacks,Child care</p>
+          </div>
+          <!-- Travel details -->
+          <div class="departure-details Deccan Wings">
+            <div class="departure-box">
+              <label>Start Time with Place:</label>
+              <p>4:00 AM, Hyderabad</p>
+            </div>
+            <div class="departure-box">
+              <label>End Time with Place:</label>
+              <p>9:00 AM, Malaysia</p>
+            </div>
+            <div class="departure-box">
+              <label>Total Travel Time:</label>
+              <p>5 hours</p>
+            </div>
+            <!-- Fare information -->
+            <div class="Fare-box">
+              <label> Fare:</label>
+              <p>$220</p>
+            </div>
+            <div class="book-flight-box">
+                <button>Book Your Flight</button>
+              </div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>

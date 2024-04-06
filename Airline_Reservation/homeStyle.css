@@ -1,0 +1,95 @@
+html {
+    height: 90%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 150%;
+    background: url('home1.jpg')no-repeat;
+    background-size: cover; 
+    height: 90vh; 
+    /*background-attachment: fixed;*/
+    display: flex;
+    flex-direction: column;
+}
+img {
+    max-width: 125px; /* Set the maximum width of the image */
+    max-height: 125x; /* Set the maximum height of the image */
+    width: auto;
+    height: auto; 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for a 3D effect */
+    position: absolute;
+    z-index: 100;
+    transform: rotate(15deg);
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    color:black;
+   
+}
+
+
+button {
+    border: 3px solid black; /* Set border color to black */
+    padding: 10px; /* Adjust padding as needed */
+    font-size: 20px; /* Set the font size to 16px or your desired size */
+    margin: 3px; /* Adjust margin as needed */
+}
+section {
+    text-align: center;
+    padding: 10px;
+ 
+}
+
+#searchSection {
+    background-image: url("back.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+#searchForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#searchForm input,
+#searchForm button {
+    margin: 5px;
+    padding: 7px;
+    width: 180px;
+}
+h2 {
+    color: black;
+}
+
+
+.flightCard {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    background-color:black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: auto;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+ 
+  <meta charset="utf-8">
+  <title>Boarding Pass</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+  <style>
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      height: 100vh;
+      background: linear-gradient(45deg, #eaeaea 33.33%, #c7ecee 33.33%, #c7ecee 66.66%, #eaeaea 66.66%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .boarding-pass {
+      width: 60%;
+      max-width: 700px;
+      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.98));
+      background-color: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    }
+
+    .flight-info {
+      padding: 20px;
+      text-align: center;
+ display: inline-block; 
+  width: 50%; 
+  text-align: center;
+
+    }
+
+    .flight-info .code {
+      font-size: 32px;
+      font-weight: bold;
+ display: inline-block; 
+  width: 50px;
+  text-align: center;
+ display: inline-block;
+    }
+
+    .flight-info .city {
+      font-size: 16px;
+      color: #48dbfb;
+    }
+
+    .flight-median {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .flight-median i {
+      font-size: 24px;
+      color: #48dbfb;
+    }
+
+    .passenger-info {
+      padding: 20px;
+      text-align: center;
+
+    }
+
+    .passenger-info .label {
+      font-size: 14px;
+      color: #0abde3;
+display: inline-block; 
+  width: 40%; 
+  vertical-align: top; 
+    }
+
+    .passenger-info .content {
+      font-size: 18px;
+      font-weight: 100;
+display: inline-block;
+  width: 40%; 
+  vertical-align: top; 
+    }
+.boarding-pass * {
+  text-align: left;
+}
+    button {
+      background-color: #48dbfb;
+      font-size: 30px;
+      margin: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="boarding-pass" id="boardingPass">
+    <div class="flight-info">
+      <div class="code">IMX</div>
+      <div class="city">New Delhi</div>
+      <div class="flight-median">
+        <i class="fas fa-plane"></i>
+      </div>
+      <div class="code">DXB</div>
+      <div class="city">Mumbai</div>
+    </div>
+
+    <div class="passenger-info">
+      <div class="label">Passenger</div>
+      <div class="content">Dhivya</div>
+      <div class="label">Date</div>
+      <div class="content">21/12/2023</div>
+      <div class="label">Flight No</div>
+      <div class="content">SG720</div>
+      <div class="label">Seat</div>
+      <div class="content">4G</div>
+      <div class="label">Boarding Time</div>
+      <div class="content">12:00 IST</div>
+      <div class="label">Arrival Time</div>
+      <div class="content">3:00 GST</div>
+      <div class="label">Flight Name</div>
+      <div class="content">IndiGo</div>
+    </div>
+  </div>
+
+  <button onclick="downloadPDF()">Download PDF</button>
+
+  <script>
+    function downloadPDF() {
+      var element = document.getElementById('boardingPass');
+      var opt = {
+        margin: 10,
+        filename: 'boarding-pass.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf(element, opt);
+    }
+  </script>
+</body>
+</html>

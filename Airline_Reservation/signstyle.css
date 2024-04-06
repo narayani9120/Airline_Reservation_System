@@ -1,0 +1,78 @@
+body{
+  background-image: url("sign.jpg");
+  background-size: cover; 
+  height: 100vh; 
+  background-attachment: fixed;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Flexbox styles */
+#anchor-pane {
+  display: flex;
+  flex-direction: column;
+ justify-content: flex-start; /* Align to the top */
+  max-width: 400px;
+  margin: 20px auto; /* Center the box and add some space */
+  padding: 20px;
+  border: 3px solid black; /* Add an outline box */
+  border-radius: 12px;
+  font-size: 20px;
+  text-align: left;
+}
+
+/* Align radio buttons with respect to the text */
+#anchor-pane label {
+  display: flex;
+  align-items: left;
+  border-color: black;
+
+}
+
+.radio-container {
+  display: flex; /* Make the radio container a flexbox element */
+  flex-direction: row; /* Align the radio buttons horizontally */
+  align-items: center;
+  text-align: left; /* Align the content to the left */
+}
+
+/* Style the radio buttons to hide the default styles */
+input[type="radio"] {
+  margin-right: 5px; /* Add spacing between radio button and text if needed */
+  vertical-align: middle; /* Align the radio button vertically with the text */
+}
+
+/* Style the labels for better presentation */
+label {
+  display: block; /* Make labels block-level elements to start on a new line */
+  margin-bottom: 10px; /* Add vertical space between labels */
+}
+
+
+#submitButton{
+  padding: 10px;
+  background-color: black;
+  color: #fffefe;
+  border: none;
+  cursor: pointer;
+  width: 100%
+  
+}
+
+#cancelButton {
+  padding: 10px;
+  background-color: red;
+  color: #fffefe;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Make buttons take full width */
+}

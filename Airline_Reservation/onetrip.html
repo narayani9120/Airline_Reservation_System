@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="onetripStyle.css">
+    <title>Flight Booking System</title>
+    <script src="onetrip.js" defer></script>
+</head>
+<body>
+    
+    <div class="booking-container">
+        <h1>Flight Booking System</h1>
+        <div class="left-side">
+            <label for="departFrom">Depart From:</label>
+            <input type="text" id="departFrom" name="departFrom">
+
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" name="departureDate">
+
+            <label for="travellers">Travellers:</label>
+            <input type="number" id="travellers" name="travellers" min="1">
+
+            <label for="class">Class:</label>
+            <select id="class" name="class">
+                <option value="economy">Economy</option>
+                <option value="premiumEconomy">Premium Economy</option>
+                <option value="business">Business</option>
+            </select>
+        </div>
+
+        <div class="right-side">
+            <label for="goingTo">Going To:</label>
+            <input type="text" id="goingTo" name="goingTo">
+
+            <label for="returnDate">Return Date:</label>
+            <input type="date" id="returnDate" name="returnDate">
+        </div>
+
+        <div class="line"></div>
+
+        <div class="button-container">
+            <button onclick="goBack()"id="goBackBtn">Back</button>
+            <div style="margin-right: 20px;"></div> 
+            <button onclick="checkAvailability()">Show Availability</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            // Implement go back functionality
+            alert('Go back button clicked');
+        }
+
+        function checkAvailability() {
+            // Implement show availability functionality
+            alert('Show availability button clicked');
+        }
+    </script>
+</body>
+</html>

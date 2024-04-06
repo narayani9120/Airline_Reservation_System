@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Details</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("air2.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+     /* background-color: #fff;*/
+     background-color: rgba(200, 200, 200, 0.8); /* Adjust the opacity as needed */
+
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .logo img {
+      max-width: 20%;
+      height: auto;
+    }
+
+    .fare-summary {
+      flex-grow: 1;
+      padding-left: 20px;
+      text-align: right;
+    }
+    .onward-flight,
+    .connecting-flight {
+      
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    h2, p {
+      margin: 0;
+    }
+
+    .flight-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+   
+
+    .onward-flight h2,
+    .connecting-flight h2 {
+      color: #333;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .airline img {
+      max-width: 60px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .airline span {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .aircraft span {
+      font-size: 0.9em;
+    }
+
+    .flight-info,
+    .flight-timing,
+    .fare {
+      margin-top: 15px;
+    }
+
+    .fare p {
+      color: #555;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.8em;
+    }
+
+    .book-now-btn {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .book-now-btn:hover {
+      background-color: #555;
+    }
+
+    
+    .additional-flights {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .another-flight-template {
+      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8); 
+
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="Airline logo">
+      </div>
+      <div class="fare-summary">
+        
+        <h2>New Delhi (DEL) to Hyderabad(HYD)</h2>
+        <p>2h 05m</p>
+        <p>DEAL Avail Flat 20% OFF. Valid on all payment modes. Use code - FLIGHTSALE</p>
+      </div>
+    </div>
+    <div class="flight-details">
+      <!-- Pair 1 -->
+      <div class="onward-flight">
+        <h2>Onward Flight </h2>
+        <div class="flight-info">
+          <div class="airline">
+            <img src="airindia.png" alt="Airline icon">
+            <span>Airlndia Express, IX-955 (Economy)</span>
+          </div>
+          <div class="aircraft">
+            <span>Airbus A320-100</span>
+          </div>
+        </div>
+        <div class="flight-timing">
+          <div class="depart">
+            <span>New Delhi (DEL)</span>
+            <span>13:05</span>
+          </div>
+          <div class="arrive">
+            <span>Lucknow (LKO)</span>
+            <span>14:20</span>
+          </div>
+          <div class="duration">
+            <span>1h 15m</span>
+          </div>
+        </div>
+        <div class="fare">
+          <p>DEAL Avail Flat 20% OFF & complimentary meal on all payment modes. Use promo code -FLIGHTSALE</p>
+        </div>
+      </div>
+      <div class="connecting-flight">
+        <h2>Connecting Flight </h2>
+        <div class="flight-info">
+          <div class="airline">
+            <img src="airindia.png" alt="Airline icon">
+            <span>Airlndia Express, IX-955  (Economy)</span>
+          </div>
+          <div class="aircraft">
+            <span>Boeing 737 MAX 8</span>
+          </div>
+        </div>
+        <div class="flight-timing">
+          <div class="depart">
+            <span>Lucknow (LKO)</span>
+            <span>17:10</span>
+          </div>
+          <div class="arrive">
+            <span>Hyderabad (HYD)</span>
+            <span>19:00</span>
+          </div>
+          <div class="duration">
+            <span>1h 50m</span>
+          </div>
+        </div>
+        <div class="fare">
+          <p>DEAL Avail Flat 20% OFF & complimentary meal on all payment modes. Use promo code -FLIGHTSALE</p>
+        </div>
+        <button class="book-now-btn" onclick="bookNow(1)">Book Now</button>
+      </div>
+
+      <!-- Pair 2 -->
+      <div class="onward-flight">
+        <h2>Onward Flight </h2>
+        <div class="flight-info">
+          <div class="airline">
+            <img src="jetlogo.png" alt="Airline icon">
+            <span>Jet Airways, 9W-567 (Business)</span>
+          </div>
+          <div class="aircraft">
+            <span>Boeing 747-400</span>
+          </div>
+        </div>
+        <div class="flight-timing">
+          <div class="depart">
+            <span>New Delhi(DEL)</span>
+            <span>10:30</span>
+          </div>
+          <div class="arrive">
+            <span>Lucknow(LKO)</span>
+            <span>12:45</span>
+          </div>
+          <div class="duration">
+            <span>2h 15m</span>
+          </div>
+        </div>
+        <div class="fare">
+          <p>Luxury business class with exclusive lounge access. Limited seats available.</p>
+        </div>
+      </div>
+      <div class="connecting-flight">
+        <h2>Connecting Flight </h2>
+        <div class="flight-info">
+          <div class="airline">
+            <img src="jetlogo.png" alt="Airline icon">
+            <span>Jet Airways, 9W-567 (Business)</span>
+          </div>
+          <div class="aircraft">
+            <span>Airbus A330-200</span>
+          </div>
+        </div>
+        <div class="flight-timing">
+          <div class="depart">
+            <span>Lucknow(LKO))</span>
+            <span>14:30</span>
+          </div>
+          <div class="arrive">
+            <span>Hyderabad(HYD)</span>
+            <span>16:45</span>
+          </div>
+          <div class="duration">
+            <span>2h 15m</span>
+          </div>
+        </div>
+        <div class="fare">
+          <p>Business class comfort with complimentary in-flight entertainment.</p>
+        </div>
+        <button class="book-now-btn" onclick="bookNow(2)">Book Now</button>
+      </div>
+
+      <!-- Pair 3 -->
+      <div class="onward-flight">
+        <h2>Onward Flight </h2>
+        <div class="flight-info">
+          <div class="airline">
+            <img src="spice.png" alt="Airline icon">
+            <span>SpiceJet, SG-789 (Economy)</span>
+          </div>
+          <div class="aircraft">
+            <span>Boeing 737-800</span>
+          </div>
+        </div>
+        <div class="flight-timing">
+          <div class="depart">
+            <span>New Delhi(DEL)</span>
+            <span>18:20</span>
+          </div>
+          <div class="arrive">
+            <span>Lucknow(LKO)</span>
+            <span>20:30</span>
+          </div>
+          <div class="duration">
+            <span>2h 10m</span>
+          </div>
+        </div>
+        <div class="fare">
+          <p>Budget-friendly option with in-flight snacks available for purchase.</p>
+        </div>
+      </div>
+      <div class="connecting-flight">
+        <h2>Connecting Flight </h2>
+        <div class="flight-info">
+          <div class="airline">
+            <img src="spice.png" alt="Airline icon">
+            <span>SpiceJet, SG-789 (Economy)</span>
+          </div>
+          <div class="aircraft">
+            <span>Airbus A320neo</span>
+          </div>
+        </div>
+        <div class="flight-timing">
+          <div class="depart">
+            <span>Lucknow(LKO)</span>
+            <span>22:15</span>
+          </div>
+          <div class="arrive">
+            <span>Hyderabad (HYD)</span>
+            <span>23:30</span>
+          </div>
+          <div class="duration">
+            <span>1h 15m</span>
+          </div>
+        </div>
+        <div class="fare">
+          <p>Enjoy comfortable travel at an affordable price with Air Asia.</p>
+        </div>
+        <button class="book-now-btn" onclick="bookNow(3)">Book Now</button>
+      </div>
+    </div>
+  <script>
+    function bookNow(pairNumber) {
+      alert('Booking Confirmed for Pair ' + pairNumber + '!');
+      // You can add additional logic for booking here
+    }
+  </script>
+</body>
+</html>

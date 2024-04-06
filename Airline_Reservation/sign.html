@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="sign.js" defer></script>
+    <link rel="stylesheet" href="signstyle.css">
+    <ul id="details"></ul>
+</head>
+<body>
+    <h1><center> Sign Up </center> </h1>
+    <div id="anchor-pane">
+        <form id="registrationForm" action="/register" method="post">
+        <label for="nameTextField">Name:</label>
+        <input id="nameTextField" type="text" placeholder="Enter your name" />
+
+        <label for="phoneTextField">Phone:</label>
+        <input id="phoneTextField" type="text" placeholder="Enter your phone number" />
+
+        <label for="emailTextField">Email:</label>
+        <input id="emailTextField" type="text" placeholder="Enter your email (eg.@gmail.com)" />
+
+        <label for="ageTextField">Current Age:</label>
+        <input id="ageTextField" type="text" placeholder="Enter your age" />
+
+        <label for="dobDatePicker">Date of Birth:</label>
+        <input id="dobDatePicker" type="date" />
+
+        <div class="radio-container">
+            <label>Gender:</label>
+            <label for="MaleRadioButton">
+                <input id="MaleRadioButton" type="radio" name="gender" value="Male" />
+                Male
+            </label>
+        
+            <label for="femaleRadioButton">
+                <input id="femaleRadioButton" type="radio" name="gender" value="Female" />
+                Female
+            </label>
+        </div>
+        
+
+        <label for="addressTextField">Permanent Address:</label>
+        <input id="addressTextField" type="text" placeholder="Enter your permanent address" />
+
+        <label for="passwordPasswordField">Password:</label>
+        <input id="passwordPasswordField" type="password" placeholder="Enter your password (eg. m#P52s@$7)" />
+
+        <label for="rePassWordField">Retype Password:</label>
+        <input id="rePassWordField" type="password" placeholder="Retype your password" />
+
+        <button id="submitButton" onclick="submitButtonOnAction()">Submit</button>
+        <button id="cancelButton" onclick="cancelButtonOnAction()">Cancel</button>
+    </form>
+    </div>
+
+    
+</body>
+</html>

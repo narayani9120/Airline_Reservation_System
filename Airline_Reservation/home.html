@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homeStyle.css">
+    <title>Airline Reservation</title>
+    <script src="home.js" defer></script>
+    
+</head>
+
+<body>
+    <img src="logo.png">
+    <header>
+        <h1>Airline Reservation System</h1>
+    </header>
+
+    <section id="searchSection">
+        <br><br>
+        <form id="searchForm">
+            <button type="button" onclick="selectTripType('one-way')">One Trip</button>
+            <button type="button" onclick="selectTripType('round-trip')">Round Trip</button>
+            <button type="button" onclick="goToProfile()">My Profile</button>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section id="featuredFlights">
+        <h2>Featured Flights</h2>
+    
+        <div class="flightCard">
+            <h3>Flight to Paris</h3>
+            <p>Departure: January 15, 2024</p>
+            <p>Price: $500</p>
+            <button onclick="reserveFlight(1)">Reserve</button>
+        </div>
+    
+        <div class="flightCard">
+            <h3>Explore Tokyo</h3>
+            <p>Departure: February 1, 2024</p>
+            <p>Price: $700</p>
+            <button onclick="reserveFlight(2)">Reserve</button>
+        </div>
+    
+        <div class="flightCard">
+            <h3>Adventure in New York</h3>
+            <p>Departure: March 10, 2024</p>
+            <p>Price: $600</p>
+            <button onclick="reserveFlight(3)">Reserve</button>
+        </div>
+    
+        <div class="flightCard">
+            <h3>Beach Getaway to Bali</h3>
+            <p>Departure: April 5, 2024</p>
+            <p>Price: $800</p>
+            <button onclick="reserveFlight(4)">Reserve</button>
+        </div>
+    
+        <div class="flightCard">
+            <h3>Romantic Escape to Rome</h3>
+            <p>Departure: May 20, 2024</p>
+            <p>Price: $550</p>
+            <button onclick="reserveFlight(5)">Reserve</button>
+        </div>
+                
+        <div class="flightCard">
+            <h3>Cultural Journey to Beijing</h3>
+            <p>Departure: June 8, 2024</p>
+            <p>Price: $650</p>
+            <button onclick="reserveFlight(6)">Reserve</button>
+        </div>
+    
+        <div class="flightCard">
+            <h3>City Lights of Dubai</h3>
+            <p>Departure: July 3, 2024</p>
+            <p>Price: $750</p>
+            <button onclick="reserveFlight(7)">Reserve</button>
+        </div>
+    
+        <div class="flightCard">
+            <h3>Historical Tour in Athens</h3>
+            <p>Departure: August 18, 2024</p>
+            <p>Price: $600</p>
+            <button onclick="reserveFlight(8)">Reserve</button>
+        </div>
+    
+        <div class="flightCard">
+            <h3>Relaxing Retreat to Maldives</h3>
+            <p>Departure: September 5, 2024</p>
+            <p>Price: $950</p>
+            <button onclick="reserveFlight(9)">Reserve</button>
+        </div>
+    
+
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Airline Reservation System</p>
+    </footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="roundStyle.css">
+    <title>Round Trip Flight Booking</title>
+    <script src="roundtrip.js" defer></script>
+</head>
+<body>
+    <div class="booking-container">
+        <h1>Round Trip Flight Booking</h1>
+        <div class="left-side">
+            <label for="departFrom">Depart From:</label>
+            <input type="text" id="departFrom" name="departFrom" placeholder="Enter departure city">
+
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" name="departureDate">
+
+            <label for="travellers">Travellers:</label>
+            <input type="number" id="travellers" name="travellers" min="1">
+
+            <label for="class">Class:</label>
+            <select id="class" name="class">
+                
+                <option value="student">Student Fare</option>
+                <option value="armedForces">Armed Forces</option>
+                <option value="seniorCitizen">Senior Citizen</option>
+            </select>
+        </div>
+
+        <div class="right-side">
+            <label for="goingTo">Going To:</label>
+            <input type="text" id="goingTo" name="goingTo" placeholder="Enter destination city">
+
+            <label for="returnDate">Return Date:</label>
+            <input type="date" id="returnDate" name="returnDate">
+        </div>
+
+        <div class="line"></div>
+
+        <div class="button-container">
+            <button onclick="goBack()"id="goBackBtn">Back</button>
+            <div style="margin-right: 20px;"></div> 
+            <button onclick="checkRefund()">Check Your Refund</button>
+            <div style="margin-right: 20px;"></div> 
+            <button onclick="checkAvailability()" id="checkAvailabilityBtn">Show Availability</button>
+        </div>
+    
+
+    </body>
+</html>
